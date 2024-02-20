@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcqwrrudh3vea"]
+
+[ext_resource type="PackedScene" uid="uid://0t0xfxejpsal" path="res://escena/muro.tscn" id="1_nkxw4"]
+[ext_resource type="Texture2D" uid="uid://domplc74t3046" path="res://assets/background/background-image-example.jpg" id="2_0am2j"]
+[ext_resource type="PackedScene" uid="uid://bqnqem0ool6y8" path="res://escena/Player.tscn" id="3_o528u"]
+[ext_resource type="PackedScene" uid="uid://ccxptteq6muoj" path="res://escena/flag.tscn" id="4_78vhm"]
+
+[node name="main" type="Node2D"]
+
+[node name="Muro" parent="." instance=ExtResource("1_nkxw4")]
+position = Vector2(-124.638, 161.819)
+scale = Vector2(0.5, 0.5)
+
+[node name="Muro2" parent="." instance=ExtResource("1_nkxw4")]
+position = Vector2(-350.226, 153.81)
+scale = Vector2(0.2, 0.2)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+z_index = -1
+position = Vector2(-1.99999, 3)
+scale = Vector2(1.33333, 1.59901)
+texture = ExtResource("2_0am2j")
+
+[node name="Flag" parent="." instance=ExtResource("4_78vhm")]
+position = Vector2(-350.796, 36.9175)
+
+[node name="Player" parent="." instance=ExtResource("3_o528u")]
+position = Vector2(-139, -117)

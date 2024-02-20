@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqnqem0ool6y8"]
+
+[ext_resource type="Script" path="res://escena/CharacterBody2D.gd" id="1_7nqln"]
+[ext_resource type="Texture2D" uid="uid://dvynwoq5svvwf" path="res://assets/Goku.png" id="1_ic6t2"]
+[ext_resource type="AudioStream" uid="uid://kc6jkuqwu18s" path="res://assets/audio/fast-simple-chop-5-6270.mp3" id="3_tv4km"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2yxx"]
+size = Vector2(86, 138)
+
+[node name="Player" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_7nqln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(27, 53)
+shape = SubResource("RectangleShape2D_b2yxx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(27, 49)
+scale = Vector2(3.07692, 2.88462)
+texture = ExtResource("1_ic6t2")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("3_tv4km")
+volume_db = 2.971
