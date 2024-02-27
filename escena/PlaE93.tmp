@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqnqem0ool6y8"]
+[gd_scene load_steps=5 format=3 uid="uid://bqnqem0ool6y8"]
 
 [ext_resource type="Script" path="res://escena/CharacterBody2D.gd" id="1_7nqln"]
 [ext_resource type="AudioStream" uid="uid://kc6jkuqwu18s" path="res://assets/audio/fast-simple-chop-5-6270.mp3" id="3_tv4km"]
 [ext_resource type="PackedScene" uid="uid://dhvp42sqrnaw2" path="res://escena/AnimatedSprite.tscn" id="3_xxa77"]
-[ext_resource type="Texture2D" uid="uid://bm23eel8aadgy" path="res://assets/background/Background_2.png" id="4_g4jjy"]
-[ext_resource type="Texture2D" uid="uid://dtylc5yl87b4p" path="res://assets/background/Background_1.png" id="5_u4ec7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2yxx"]
 size = Vector2(77, 102)
@@ -23,21 +21,3 @@ stream = ExtResource("3_tv4km")
 volume_db = 2.971
 
 [node name="AnimatedSprite" parent="Player" instance=ExtResource("3_xxa77")]
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-
-[node name="Background_1" type="Sprite2D" parent="Player/Camera2D"]
-light_mask = 512
-visibility_layer = 512
-z_index = -1
-position = Vector2(-0.499994, 1.49999)
-scale = Vector2(2.3246, 2.40074)
-texture = ExtResource("4_g4jjy")
-
-[node name="Background_2" type="Sprite2D" parent="Player/Camera2D"]
-light_mask = 512
-visibility_layer = 512
-z_index = -1
-position = Vector2(-6.10352e-05, -7.62939e-06)
-scale = Vector2(2.31855, 2.38971)
-texture = ExtResource("5_u4ec7")

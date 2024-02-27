@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvynwoq5svvwf"
-path="res://.godot/imported/Goku.png-63f4be9d2792010ab497cbc20744a4c7.ctex"
+uid="uid://cn4hhjbtcga2w"
+path="res://.godot/imported/movement-Goku.png-3cec18d300eb55e2e36e7e5c80374522.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Goku.png"
-dest_files=["res://.godot/imported/Goku.png-63f4be9d2792010ab497cbc20744a4c7.ctex"]
+source_file="res://assets/sprites/movement-Goku.png"
+dest_files=["res://.godot/imported/movement-Goku.png-3cec18d300eb55e2e36e7e5c80374522.ctex"]
 
 [params]
 

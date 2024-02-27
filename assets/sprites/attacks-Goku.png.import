@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://23khgoe0jkf6"
-path="res://.godot/imported/pared_ladrillos.jpg-43271eb29eea9f29c29968db1ebf3a66.ctex"
+uid="uid://77xdve7fk13s"
+path="res://.godot/imported/attacks-Goku.png-df45a8f6b35342ed6cd62697becbb8d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/pared_ladrillos.jpg"
-dest_files=["res://.godot/imported/pared_ladrillos.jpg-43271eb29eea9f29c29968db1ebf3a66.ctex"]
+source_file="res://assets/sprites/attacks-Goku.png"
+dest_files=["res://.godot/imported/attacks-Goku.png-df45a8f6b35342ed6cd62697becbb8d9.ctex"]
 
 [params]
 

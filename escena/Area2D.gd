@@ -6,5 +6,5 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	$LevelComplete.play() # Replace with function body.
