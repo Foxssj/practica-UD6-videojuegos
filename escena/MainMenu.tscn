@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8mjp8lxpienq"]
+
+[ext_resource type="FontFile" uid="uid://cyf24jpuqf6e7" path="res://assets/ui/04B_30__.TTF" id="1_e28hv"]
+[ext_resource type="Script" path="res://escena/MainMenu.gd" id="1_v8whh"]
+[ext_resource type="StyleBox" uid="uid://d4il8rfxsqk6u" path="res://escena/basic_button.tres" id="2_q8csd"]
+[ext_resource type="StyleBox" uid="uid://dnr1wgxwm5nwe" path="res://escena/hover_main_menu_buttons.tres" id="3_0j3wc"]
+[ext_resource type="Texture2D" uid="uid://bm23eel8aadgy" path="res://assets/background/Background_2.png" id="3_omo5y"]
+[ext_resource type="StyleBox" uid="uid://dnycbmsg0iiel" path="res://escena/pressed_main_menu_button.tres" id="4_o8spg"]
+[ext_resource type="Texture2D" uid="uid://dtylc5yl87b4p" path="res://assets/background/Background_1.png" id="4_ts76s"]
+[ext_resource type="AudioStream" uid="uid://412cwes8fav0" path="res://assets/audio/Main Menu theme db game.mp3" id="8_fbtun"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_173ab"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wsx5"]
+draw_center = false
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 74.0
+offset_top = -11.0
+offset_right = 74.0
+offset_bottom = -11.0
+script = ExtResource("1_v8whh")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -364.0
+offset_top = -86.0
+offset_right = 411.0
+offset_bottom = -36.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_e28hv")
+theme_override_font_sizes/font_size = 47
+text = "DRAGON COINZ SUPER"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D"]
+offset_left = -189.0
+offset_top = 3.0
+offset_right = 217.0
+offset_bottom = 98.0
+
+[node name="Start_button" type="Button" parent="Camera2D/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_e28hv")
+theme_override_styles/normal = ExtResource("2_q8csd")
+theme_override_styles/hover = ExtResource("3_0j3wc")
+theme_override_styles/pressed = ExtResource("4_o8spg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_173ab")
+text = "START"
+
+[node name="Control" type="Control" parent="Camera2D/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Exit_button" type="Button" parent="Camera2D/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_e28hv")
+theme_override_styles/normal = ExtResource("2_q8csd")
+theme_override_styles/hover = ExtResource("3_0j3wc")
+theme_override_styles/pressed = ExtResource("4_o8spg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0wsx5")
+text = "EXIT"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
+scroll_limit_begin = Vector2(1000, 0)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="Background_1" type="Sprite2D" parent="Camera2D/ParallaxBackground/ParallaxLayer2"]
+z_index = -1
+position = Vector2(-4, -222)
+scale = Vector2(2.725, 3.201)
+texture = ExtResource("3_omo5y")
+centered = false
+flip_h = true
+region_filter_clip_enabled = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="Background_2" type="Sprite2D" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
+light_mask = 512
+visibility_layer = 512
+z_index = -1
+texture_repeat = 3
+position = Vector2(-3, -279)
+scale = Vector2(2.319, 3.26471)
+texture = ExtResource("4_ts76s")
+centered = false
+
+[node name="main_menu_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_fbtun")
+volume_db = -14.0
+
+[connection signal="pressed" from="Camera2D/VBoxContainer/Start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Camera2D/VBoxContainer/Exit_button" to="." method="_on_exit_button_pressed"]

@@ -1,43 +1,186 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqnqem0ool6y8"]
+[gd_scene load_steps=23 format=3 uid="uid://bqnqem0ool6y8"]
 
 [ext_resource type="Script" path="res://escena/CharacterBody2D.gd" id="1_7nqln"]
 [ext_resource type="AudioStream" uid="uid://kc6jkuqwu18s" path="res://assets/audio/fast-simple-chop-5-6270.mp3" id="3_tv4km"]
-[ext_resource type="PackedScene" uid="uid://dhvp42sqrnaw2" path="res://escena/AnimatedSprite.tscn" id="3_xxa77"]
-[ext_resource type="Texture2D" uid="uid://bm23eel8aadgy" path="res://assets/background/Background_2.png" id="4_g4jjy"]
-[ext_resource type="Texture2D" uid="uid://dtylc5yl87b4p" path="res://assets/background/Background_1.png" id="5_u4ec7"]
+[ext_resource type="PackedScene" uid="uid://efbom76jq5cd" path="res://escena/hud.tscn" id="5_lfmy5"]
+[ext_resource type="Texture2D" uid="uid://77xdve7fk13s" path="res://assets/sprites/attacks-Goku.png" id="6_hbexr"]
+[ext_resource type="Texture2D" uid="uid://cn4hhjbtcga2w" path="res://assets/sprites/movement-Goku.png" id="7_neptg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgsar"]
+atlas = ExtResource("6_hbexr")
+region = Rect2(0, 384, 127, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdhpp"]
+atlas = ExtResource("6_hbexr")
+region = Rect2(127, 128, 127, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc88x"]
+atlas = ExtResource("6_hbexr")
+region = Rect2(0, 256, 127, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmtr6"]
+atlas = ExtResource("6_hbexr")
+region = Rect2(127, 256, 127, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqb3p"]
+atlas = ExtResource("6_hbexr")
+region = Rect2(381, 0, 127, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efq6b"]
+atlas = ExtResource("6_hbexr")
+region = Rect2(0, 0, 127, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8qjp"]
+atlas = ExtResource("6_hbexr")
+region = Rect2(127, 0, 127, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ck52w"]
+atlas = ExtResource("6_hbexr")
+region = Rect2(254, 0, 127, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ide3i"]
+atlas = ExtResource("6_hbexr")
+region = Rect2(0, 128, 127, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp4oh"]
+atlas = ExtResource("7_neptg")
+region = Rect2(0, 285, 96, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d35b"]
+atlas = ExtResource("7_neptg")
+region = Rect2(96, 285, 96, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acwnm"]
+atlas = ExtResource("7_neptg")
+region = Rect2(192, 95, 96, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au7jo"]
+atlas = ExtResource("7_neptg")
+region = Rect2(288, 95, 96, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvdwm"]
+atlas = ExtResource("7_neptg")
+region = Rect2(384, 95, 96, 95)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ybti2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgsar")
+}],
+"loop": true,
+"name": &"AirTime",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdhpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc88x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmtr6")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqb3p")
+}],
+"loop": true,
+"name": &"Block",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efq6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8qjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ck52w")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ide3i")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp4oh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d35b")
+}],
+"loop": true,
+"name": &"Kamehameha",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acwnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au7jo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvdwm")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2yxx"]
-size = Vector2(77, 102)
+size = Vector2(72, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_065rk"]
+size = Vector2(40, 43)
 
 [node name="Player" type="Node2D"]
+z_index = 2
 
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_7nqln")
 
+[node name="AnimatedChar" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_ybti2")
+animation = &"Run"
+autoplay = "Attack"
+frame = 2
+frame_progress = 0.177753
+flip_h = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-2.5, -2)
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_b2yxx")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("3_tv4km")
 volume_db = 2.971
 
-[node name="AnimatedSprite" parent="Player" instance=ExtResource("3_xxa77")]
-
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="Background_1" type="Sprite2D" parent="Player/Camera2D"]
-light_mask = 512
-visibility_layer = 512
-z_index = -1
-position = Vector2(-0.499994, 1.49999)
-scale = Vector2(2.3246, 2.40074)
-texture = ExtResource("4_g4jjy")
+[node name="Hud" parent="Player/Camera2D" instance=ExtResource("5_lfmy5")]
+offset_left = 408.0
+offset_top = -310.0
+offset_right = 408.0
+offset_bottom = -310.0
 
-[node name="Background_2" type="Sprite2D" parent="Player/Camera2D"]
-light_mask = 512
-visibility_layer = 512
-z_index = -1
-position = Vector2(-6.10352e-05, -7.62939e-06)
-scale = Vector2(2.31855, 2.38971)
-texture = ExtResource("5_u4ec7")
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(49, 19.5)
+shape = SubResource("RectangleShape2D_065rk")
+disabled = true
